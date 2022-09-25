@@ -64,7 +64,7 @@ my @files = <$include_dir/*.h>;
 my @necessary_include_files;
 my @matches;
 foreach my $file (@files) {
-    open(FILE, '<:crlf', "$file");
+    open(FILE, '<:crlf', "$file") or die "Can't open '$file': $!";
     my $content = <FILE>;
     close FILE;
     my $found = 0;
